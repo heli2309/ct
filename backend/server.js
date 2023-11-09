@@ -11,11 +11,12 @@ mongoose.connect('mongodb://127.0.0.1:27017/cricket', {
   useUnifiedTopology: true,
 });
 
-app.use(cors(
-  origin:["https://deploy-mern.vercel.app"],
-  methods:['POST','GET'],
-  credentials:true
-));
+app.use(cors({
+  origin: ["https://deploy-mern.vercel.app"],
+  methods: ['POST', 'GET'],
+  credentials: true
+}));
+
 app.use(bodyParser.json());
 
 const matchSchema = new mongoose.Schema({
